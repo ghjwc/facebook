@@ -19,7 +19,7 @@ if ($_SESSION) {
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
+        <title>Facebook</title>
     </head>
     <link rel="stylesheet" type="text/css" href="../view/style.css">
     <body>
@@ -49,13 +49,18 @@ if ($_SESSION) {
                 </p>
             </li>
 
-            <!-- info 및 logout -->
+            
             <li class="login">
                 <img src="https://i.ibb.co/Zhqg0Hb/login.png" width="25px">
-                <b onclick="myinfoupdate()"><?php echo $_SESSION['name'] ?></b>
-                <button onclick="logout()" type="submit">X</button>
+                <b><?php echo $_SESSION['name'] ?></b>
 
+                <!-- info 및 logout -->
+                <div class="dropdown">
+                    <button onclick="myInfoUpdate()" type="submit">정보 수정</button>
+                    <button onclick="logout()" type="submit">로그아웃</button>
+                </div>
             </li>
+
 
             <li class="ul3icon">
                 <img src="https://i.ibb.co/jWvHNp2/menu.png">
@@ -132,6 +137,11 @@ if ($_SESSION) {
 
         <div id="main">
             <div class="mainwrap">
+
+            <h1><center>
+                <?php echo $_SESSION['name'] ?>님, Facebook에 오신 것을 환영합니다!
+                </center></h1>
+
                 <div class="story">
                     <div>+</div>
                     <ul>
@@ -143,8 +153,10 @@ if ($_SESSION) {
                 <div class="write">
                     <div>
                         <img src="https://i.ibb.co/Zhqg0Hb/login.png" width="40px">
-                        <input type="text" placeholder="<?php echo $_SESSION['name'] ?>님, 무슨 생각을 하고 계신가요?">
-                    </div>
+                        <a onclick="goWrite()">
+                            <input type="text" placeholder="<?php echo $_SESSION['name'] ?>님, 무슨 생각을 하고 계신가요?">
+                        </a>
+                        </div>
                     <ul>
                         <li>
                             <img src="https://i.ibb.co/MRQwcz1/vc.png">

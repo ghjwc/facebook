@@ -4,3 +4,7 @@ function logout() {
 function myInfoUpdate() {
     location.href="my_info_update.php";
 }
+
+function goWrite() {
+    location.href="write.php";
+}

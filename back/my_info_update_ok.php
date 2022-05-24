@@ -19,7 +19,7 @@ if($prepassword != $_SESSION['password']) {
 } else {
     $sql = "update fbmember set
             password = '$afterpassword'
-            where email = '$email
+            where email = '$email'
             ";
     $result = $conn -> query($sql);
 
