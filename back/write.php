@@ -17,7 +17,7 @@ include('common.php');
 
     <div id="incontainer">
 
-        <div class="writebox">
+        <form action="write_ok.php" method="post" class="writebox">
             <h2>게시물 만들기</h2>
 
             <ul class="wul1">
@@ -25,7 +25,7 @@ include('common.php');
                 <li><?php echo $_SESSION['name'] ?></li>
             </ul>
 
-            <textarea placeholder="<?php echo $_SESSION['name'] ?>님, 무슨 생각을 하고 계신가요?"></textarea>
+            <textarea name="content" placeholder="<?php echo $_SESSION['name'] ?>님, 무슨 생각을 하고 계신가요?"></textarea>
             
             <ul class="wul2">
                 <li><img src="https://i.ibb.co/42hQR2n/color.png"></li>
@@ -46,7 +46,7 @@ include('common.php');
 
             <button>게시</button>
 
-        </div>
+        </form>
 
     </div>
     

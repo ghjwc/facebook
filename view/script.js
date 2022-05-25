@@ -8,3 +8,4 @@ function myInfoUpdate() {
 function goWrite() {
     location.href="write.php";
 }
+

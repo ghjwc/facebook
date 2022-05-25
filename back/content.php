@@ -1,19 +1,34 @@
 <?php
 
-include("common.php");
-if ($_SESSION) {
+include('common.php');
 
-} else {
-    echo "
-    <script>
-        location.href='sign_in.php';
-    </script>
-    ";
-}
+
+$sql = "select
+            content,
+            writer,
+            insertTime,
+            goodCount,
+            count
+        from fbboard
+        order by insertTime desc
+       ";
+
+$result = $conn -> query($sql);
+
+// if($data) {
+
+// } else {
+//     echo "
+//     <script>
+//         alert('비정상 접근');
+//         location.href='index.php';
+//     </script>
+//     ";
+// }
 
 ?>
 
-    <!DOCTYPE html>
+<!DOCTYPE html>
     <html lang="en">
     <head>
         <meta charset="UTF-8">
@@ -148,11 +163,11 @@ if ($_SESSION) {
 
                 <div class="write">
                     <div>
-                        <img src="https://i.ibb.co/Zhqg0Hb/login.png">
+                        <img src="https://i.ibb.co/Zhqg0Hb/login.png" width="40px">
                         <a onclick="goWrite()">
                             <input type="text" placeholder="<?php echo $_SESSION['name'] ?>님, 무슨 생각을 하고 계신가요?">
                         </a>
-                        </div>
+                    </div>
                     <ul>
                         <li>
                             <img src="https://i.ibb.co/MRQwcz1/vc.png">

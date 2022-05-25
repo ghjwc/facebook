@@ -2,14 +2,14 @@
 
 include('common.php');
 
-if($_SESSION['email'] == '') {
-    echo "
-        <script>
-            alert('로그인 할 수 없습니다.')
-            location.href='sign_in.php';
-        </script>
-        ";
-}
+// if($_SESSION['email'] == '') {
+//     echo "
+//         <script>
+//             alert('로그인 할 수 없습니다.')
+//             location.href='sign_in.php';
+//         </script>
+//         ";
+// }
 
 $name = $_POST['name'];
 $email = $_POST['email'];
