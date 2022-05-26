@@ -7,7 +7,7 @@ $sql = "select
             content,
             writer,
             insertTime,
-            goodCount,
+            likeCount,
             count
         from fbboard
         order by insertTime desc
@@ -207,15 +207,17 @@ $result = $conn -> query($sql);
 
                         <div class="content"><?php echo $data['content']; ?></div>
 
+                        <p>좋아요 <label id="likeCount"> <?php echo $data['likeCount'];?></label>개 </p>
+
                         <ul class="wlike">
                             <li>
-                                <img src="https://i.ibb.co/Kx5xH10/like.png"> 좋아요
+                                <img id="like" class="likeicon" onclick="like()" src="https://i.ibb.co/D7SQJkb/like.png"> 좋아요
                             </li>
                             <li>
-                                <img src="https://i.ibb.co/vD8Gpwq/re.png"> 댓글 달기
+                                <img src="https://i.ibb.co/dpcdJgt/re.png"> 댓글 달기
                             </li>
                             <li>
-                                <img src="https://i.ibb.co/KyxjhPF/share.png"> 공유하기
+                                <img src="https://i.ibb.co/fD8tCmz/share.png"> 공유하기
                             </li>
                         </ul>
 

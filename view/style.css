@@ -326,6 +326,12 @@ li {
     /* border: 1px solid red; */
 }
 
+.written p {
+    margin-left: 15px;
+    width: fit-content;
+    color: blue;
+}
+
 .wlike {
     display: flex;
     justify-content: space-evenly;
