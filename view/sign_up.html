@@ -14,7 +14,11 @@
             <b style="font-size: 30px;">가입하기</b>
             <p>빠르고 쉽습니다.</p>
             <input name="name" type="text" placeholder="이름">
-            <input name="email" type="email" placeholder="이메일">
+            <input name="email" type="email" id="email" placeholder="이메일">
+            <input onclick="checkID()" type="button" value="아이디 체크">
+            <p id="emailCheckF" style="display: none; color: red;">아이디가 중복됩니다.</p>
+            <p id="emailCheckT" style="display: none; color: green;">사용 가능합니다.</p>
+
             <input name="password" type="password" placeholder="비밀번호">
 
             <button class="upnewacc">가입하기</button>
@@ -23,3 +27,5 @@
     
 </body>
 </html>
+
+<script src="script.js"></script>

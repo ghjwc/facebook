@@ -11,6 +11,20 @@ if ($_SESSION) {
     ";
 }
 
+
+$sql = "select
+            content,
+            writer,
+            insertTime,
+            likeCount,
+            count
+        from fbboard
+        order by insertTime desc
+       ";
+
+$result = $conn -> query($sql);
+
+
 ?>
 
     <!DOCTYPE html>
@@ -236,7 +250,7 @@ if ($_SESSION) {
 <script src="../view/script.js"></script>
 
 <script>
-    var contentNo = <?php echo $no; ?>;
+    var contentNo = <?php echo $no; ?>
     function updateContent() {
         location.href='update_content.php?no=' + <?php echo $no ?>;
     }

@@ -9,6 +9,8 @@ function goWrite() {
     location.href="write.php";
 }
 
+// 좋아요
+
 function like() {
     var className = document.querySelector('#like').className
 
@@ -57,4 +59,27 @@ function like() {
         http.open('GET', url);
         http.send();
     }
+}
+
+
+// 아이디 중복 검사
+
+function checkID() {
+    var http = new XMLHttpRequest();
+    http.onreadystatechange = function() {
+      if(this.status == 200 && this.readyState == this.DONE) {
+      // console.log(JSON.parse(http/Response));
+        if(JSON.parse(http.response)['result'] == 'yes') {
+          document.querySelector('#emailCheckF').style.display='block';
+          document.querySelector('#emailCheckT').style.display='none';
+        } else {
+          document.querySelector('#emailCheckT').style.display='block';
+          document.querySelector('#emailCheckF').style.display='none';
+        }
+      }
+    }
+    var email = document.querySelector('#email').value;
+    var url = "http://localhost/facebook/api/check_id.php?email=" + email;
+    http.open('GET', url);
+    http.send();
 }
